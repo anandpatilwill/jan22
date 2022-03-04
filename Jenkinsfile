@@ -3,6 +3,8 @@ pipeline
         agent none
         stages 
 		{
+		parallel 
+		{
                 stage('Build')
 			{
 			agent { label 'node1' }
@@ -24,6 +26,7 @@ pipeline
 						    '''	
 						}
 				}
+		}
 				stage('Deploy')
 				{	
 					agent { label 'node1' }
