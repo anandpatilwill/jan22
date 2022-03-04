@@ -4,7 +4,7 @@ pipeline
         stages 
 		{
                 stage('Build')
-			agent ( label cnode0203 )
+			agent ( label "cnode0203" )
 				{
 						steps 
 						{
@@ -12,7 +12,7 @@ pipeline
 						}
 				}
 				stage('Test')
-					agent ( label cnode0203 )
+					agent ( label "cnode0203" )
 				{
 						steps 
 						{
@@ -23,7 +23,7 @@ pipeline
 						}
 				}
 				stage('Deploy')
-					agent ( label java0203 )
+					agent ( label "cnode0203" )
 				{
 						steps 
 						{
@@ -35,7 +35,7 @@ pipeline
 				}
 				
 				stage('My-stage')
-					agent ( label java0203 )
+					agent ( label "cnode0203" )
 				{
 						steps 
 						{
