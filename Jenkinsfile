@@ -24,8 +24,10 @@ pipeline
 				{
 						steps 
 						{
-						sh 'sleep 5'
-						
+						sh '''
+							sleep 5
+							echo "This is deploy stage"
+							'''
 						}
 				}
 				
