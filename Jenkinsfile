@@ -10,6 +10,7 @@ pipeline
 							'''
 							sh sleep 5 ; echo "This is a build stage"
 							echo "learning skeleton of pipeline"							
+							'''
 						}
 				}
 				stage('Test')
