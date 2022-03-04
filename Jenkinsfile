@@ -25,9 +25,9 @@ pipeline
 								echo "This is a test stage"	
 						    '''	
 						}
-				  }
+				 }
 			}
-		}
+		
 				stage('Deploy')
 				{	
 					agent { label 'node1' }
