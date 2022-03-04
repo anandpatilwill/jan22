@@ -1,53 +1,55 @@
-pipeline {
+pipeline 
+{
         agent none
-        stages {
-			        stage('Build')
-					{
-						parallel 
+        stages 
+		{
+                stage('Build')
+			{
+			agent { label 'node1' }
+				
+						steps 
 						{
-							agent { label 'node1' }
-							steps 
-							{
-								sh 'sleep 5 ; echo "This is a build stage"'
-							}
-					}
-					
-					stage('Test')
-						{
-							agent { label 'node2' }
-							steps 
-							{
-								sh '''
-								sleep 5
-								echo "This is a test stage"	
-								'''	
-							}
+							sh 'sleep 5 ; echo "This is a build stage"'
 						}
-						}
-					stage('Deploy')
-					{	
-						agent { label 'node1' }
+				}
+				stage('Test')
+				{
+					agent { label 'node2' }
+				
 						steps 
 						{
 							sh '''
+								sleep 5
+								echo "This is a test stage"	
+						    '''	
+						}
+				}
+				stage('Deploy')
+				{	
+					agent { label 'node1' }
+				
+						steps 
+						{
+						sh '''
 							sleep 5
 							echo "This is deploy stage"
 							'''
 						}
-					}
+				}
 				
-					stage('My-stage')
-					{
-						agent { label 'node2' }
+				stage('My-stage')
+				{
+					agent { label 'node2' }
+				
 						steps 
-							{
-								sh '''
-								sleep 5
-								echo "This is a my-stage stage"
-								'''
+						{
+						sh '''
+							sleep 5
+							echo "This is a my-stage stage"
+							'''
 						
-							}
-					}
+						}
+				}
 				
 		}
 
