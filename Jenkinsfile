@@ -8,10 +8,7 @@ pipeline
 				{
 						steps 
 						{
-							sh '''
-							sleep 5 ; echo "This is a build stage"
-							echo "learning skeleton of pipeline"							
-							'''
+							sh 'sleep 5 ; echo "This is a build stage"'
 						}
 				}
 				stage('Test')
