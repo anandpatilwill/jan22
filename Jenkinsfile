@@ -26,7 +26,7 @@ pipeline
 						}
 				}
 				stage('Deploy')
-					agent ( label jnode0203 )
+					agent ( label java0203 )
 				{
 						steps 
 						{
@@ -38,7 +38,7 @@ pipeline
 				}
 				
 				stage('My-stage')
-					agent ( label jnode0203 )
+					agent ( label java0203 )
 				{
 						steps 
 						{
