@@ -3,17 +3,17 @@ pipeline
         agent none
         stages 
 		{
-		parallel 
-		{
-                stage('Build')
+			parallel 
 			{
-			agent { label 'node1' }
+                		stage('Build')
+				{
+					agent { label 'node1' }
 				
 						steps 
 						{
 							sh 'sleep 5 ; echo "This is a build stage"'
 						}
-				}
+				 }
 				stage('Test')
 				{
 					agent { label 'node2' }
@@ -25,7 +25,8 @@ pipeline
 								echo "This is a test stage"	
 						    '''	
 						}
-				}
+				  }
+			}
 		}
 				stage('Deploy')
 				{	
